@@ -1,0 +1,79 @@
+- les résultats ne sont pas jugés par F1
+- toute petite structure, conseil pour ingé seul
+- presentation structure du truc
+- présentation des outils
+- présentation de l'architecture des services
+
+====================
+
+Sommaire
+
+1) Présentation
+	- Présentation personnelle et de Bee4win
+	- Présentation du domaine d'activité
+	- Utilisation du TAL à Bee4win
+2) Démo d'applications TAL
+	- Classification sémantique d'exigences
+	- Extraction d'exigences dans un document structuré
+	- Contrôle de la qualité des exigences
+	- Reformulation d'exigences
+2) Retours d'expérience TAL: entreprise vs université
+	- Satisfaction client != Résultats objectifs
+	- Limites des ressources disponibles en français
+	- 
+3) Retours d'expérience archi/déploiement projets TAL
+
+====================
+
+montrer boamp, exemple de cahier des charges
+
+Les clients veulent des serveurs en France ou au moins en Europe
+=> Patriot Act, NSA, espionnage industriel... pas confiance aux USA, ça limite (p.e. OpenAI)
+=> législation protection des données
+
+Les clients veulent des résultats qui font sens plutôt que le meilleur F1 possible
+=> on peut dire qu'il faut privilégier la Précision au Rappel mais pas forcément
+=> l'important c'est que les erreurs soient compréhensibles, surtout pas de faux positifs étranges, qui "choquent"
+
+Ne pas négliger l'effet "wow"
+Les résultats doivent arriver rapidement, beaucoup de systèmes testés en recherche ne sont pas viables dans l'industrie
+=> pas le temps d'entraîner un modèle à chaque cas d'usage
+Anonymisation des données
+=> éviter de garder des données d'entreprises sur nos serveurs, problématique pour enrichir des modèles par exemple
+
+La satisfaction client est décorélée de l'intérêt scientifique
+=> i.e. un NaiveBayes peut plus impressionner qu'un modèle transformers état de l'art s'il est utilisé de façon originale
+
+classification qu'on trouve comme exemples de lib ou corpus de recherche sont relativement faciles, pour les plus courants
+
+Les clients veulent comprendre comment ça marche
+=> certains sont experts, certains non
+
+Ressources en français (et autres langues demandées) faibles par rapport à l'anglais, nécessité d'avoir une expérience homogène
+- ex. modèles spacy 2 en français (démo)
+
+que deviennent les anciens de la promo ?
+
+- moi nlp tout seul dans une petite structure
+- un data scientist grosses boites
+- un fait de l'informatique embarquée pour des appareils d'analyse biologique
+- une fait des photos de nourriture
+- un fait de la musique
+- un développe sur le jeu web Amour Sucré
+- un fait de la formation ML en indépendant
+
+====================
+
+fiches CIR ?
+choix techno: python... l'application utilisateur peut être dans n'importe quel langage mais un backend NLP en python est globalement supérieur
+
+====================
+
+imprimer fiche de phrases à tester pour les démos
+
+====================
+
+passages sur davinci 3open AI et ses limites:
+- cher par token
+- API très limitée (4000 tokens, pas de batch, lente et parfois down)
+
