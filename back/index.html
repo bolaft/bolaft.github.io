@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    	<title>Insertion professionnelle - 16 janvier 2023</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+	    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	    <link rel="stylesheet" href="css/custom.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+    		.reveal section {
+			    display: inline-block;
+			    font-size: 0.6em;
+			    line-height: 1.2em;
+			    vertical-align: top;
+		  	}
+
+		  	.bold {
+		  		color: #e97e46;
+		  		font-weight: bold;
+		  	}
+
+		  	p {
+		  		text-align: left;
+		  	}
+
+		  	li {
+		  		margin-bottom: 7px;
+		  	}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <img src="img/logo_univ_nantes.png" width="20%">
+                    <h2>M2 ATAL</h2>
+                    <h4>Insertion professionnelle - X3IT020</h4>
+                    <div>16 janvier 2023
+                    <hr>
+                    <div>Soufian SALIM</div>
+                    <div>Bee4win</div>
+                    <div><a href="soufian.salim@bee4win.com">soufian.salim@bee4win.com</a></div>
+				    <aside class="notes">
+					    promo ATAL 2014<br>
+					    thèse au LS2N, qui s'appelait encore LINA au début<br>
+					    avec Adeline, demander ce qu'ils font avec elle<br>
+					    toute petite structure (4 act, 8 max)<br>
+					    mais gros clients: Orange, SNCF, EDF, TotalEnergies...<br>
+					    seule personne bossant sur le NLP<br>
+					</aside>
+				</section>
+				<section data-notes="something important">
+					<h4>Sommaire</h4>
+                    <hr>
+                    <ol>
+                    	<li><p><span class="bold">Présentation rapide</span></p>
+                    		<ul>
+                    			<li>Domaine d'activité : avant-vente</li>
+                    			<li>Outils Bee4win qui emploient le TAL</li>
+                    		</ul>
+                    	</li>
+                    	<li class="fragment"><p><span class="bold">Démo des services TAL développés</span></p>
+                    		<ul>
+								<li>Classification sémantique d'exigences</li>
+								<li>Extraction d'exigences dans un document structuré</li>
+								<li>Contrôle de la qualité des exigences</li>
+								<li>Reformulation d'exigences</li>
+                    		</ul>
+                    	</li>
+                    	<li class="fragment"><p><span class="bold">Retours d'expériences du TAL en entreprise</p></span>
+							<ul>
+								<li>Université vs services en production</li>
+								<li>Architectures pour services TAL</li>
+								<li>Considérations générales</li>
+                    		</ul>
+                    	</li>
+                    </ol>
+				</section>
+				<section>
+					<h4>Domaine d'activité de Bee4win</h4>
+                    <hr>
+                    <p>Services, conseils et solutions logicielles dans le domaine de <span class="bold">l'avant-vente</span> et de la <span class="bold">réponse aux appels d'offre</span>.</p>
+                    <ul>
+                    	<li class="fragment"><span class="bold">Appel d'offres:</span> <span>moyen pour les acheteurs publics ou les entreprises privées d'obtenir des offres de différents fournisseurs.</span></li>
+                    	<li class="fragment"><span class="bold">Avant-vente:</span> <span>tout le processus qui mène une entreprise à conclure une réponse à un appel d'offres.</li>
+                    </ul>
+                    <div class="fragment">
+                    <p>Les étapes sont :</p>
+	                    <ol>
+	                        <li><span class="fragment">Prospection</span><span class="fragment"> ← plate-forme web <span class="bold">Qualify</span></span></li>
+	                        <li><span class="fragment">Qualification des leads</span><span class="fragment"> ← plate-forme web <span class="bold">Qualify</span></span></li>
+	                        <li><span class="fragment">Analyse des besoins</span><span class="fragment"> ← plugin Word <span class="bold">Comply</span></span></li>
+	                        <li><span class="fragment">Préparation de l'offre</span><span class="fragment"> ← plugin Word <span class="bold">Comply</span></span></li>
+	                        <li><span class="fragment">Présentation de l'offre / Négociation / Conclusion / Suivi</span></li>
+	                    </ol>
+                	</div>
+				    <aside class="notes">
+					    BOAMP et autres plateformes (montrer BOAMP)<br>
+					    Cahiers des charges: analyse des besoins, préparation de l'offre, présentation de l'offre<br>
+					    Extensible à la gestion documentaire et de la rédaction<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Plate-forme web <span class="bold">Qualify</span></h4>
+                    <hr>
+                    <img src="img/qualify.png" width="100%">
+				    <aside class="notes">
+					    Usine à gaz<br>
+					    Agglomère les avis de marchés, cahiers des charges, documentation<br>
+					    Sert aux grosses boites pour trouver des offres pertinentes et s'organiser<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Plugin Word <span class="bold">Comply</span></h4>
+                    <hr>
+                    <img src="img/comply.png" width="100%">
+				    <aside class="notes">
+					    vieille image, trouvé sur internet (ubuntu oblige, pas de Word)<br>
+					    bandeau en haut avec optin et actions (pas sélectionné ici)<br>
+					    panneau d'organisation des exigences à droite<br>
+					    bouton "extraire automatiquement" etc<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Utilisation du TAL</h4>
+					<hr>
+					<ul>
+						<li>
+							<span class="bold">Qualify:</span>
+							<ul>
+								<li class="fragment">Classification des avis</li>
+								<li class="fragment">Résumé automatique</li>
+								<li class="fragment">Extraction de mots-clefs</li>
+								<li class="fragment">Mesures de similarité</li>
+							</ul>
+						</li>
+						<li>
+							<span class="bold">Comply:</span>
+							<ul>
+								<li class="fragment">Extraction et classification des exigences</li>
+								<li class="fragment">Identification des risques</li>
+								<li class="fragment">Identification des doublons, contradictions...</li>
+								<li class="fragment">Controle de la qualité</li>
+								<li class="fragment">Identification des normes et standards</li>
+								<li class="fragment">Identification des documents annexes</li>
+							</ul>
+						</li>
+					</ul>
+				    <aside class="notes">
+					    Classification des avis: aussi enrichir les métadonnées<br>
+					    Mots-clefs: beaucoup de mots non pertinents, pas de solution out-of-the-box<br>
+					</aside>
+				</section>
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Demo</h1>
+				</section>
+				<section>
+					<h4>Retour d'expérience : université vs entreprise</h4>
+                    <hr>
+            		<ul>
+            			<li class="fragment">
+            				<span class="bold">Mesures de succès :</span> métriques objectives vs sentiment et utilité.
+            			</li>
+            			<li class="fragment">
+            				<span class="bold">Corpus et données :</span> corpus de recherche et d'apprentissage relativement "propres".</li>
+            			<li class="fragment">
+            				<span class="bold">Tâches atypiques :</span> pas que classification thématique, analyse du sentiment.
+            			</li>
+            			<li class="fragment">
+            				<span class="bold">Ressources linguistiques :</span> service constant selon la langue, le sous-domaine, le format.
+            			</li>
+            		</ul>
+				    <aside class="notes">
+					    Corpus: sont utilisés pour développer les outils qui sont testés dessus.<br>
+					    Tâches: aussi pas de tâches de haut niveau, e.g. détection des actes de dialogue.<br>
+					    Ressources: doit niveler par le bas.<br>
+					</aside>
+            	</section>
+            	<section>
+					<h4>Retour d'expérience : considérations par rapport aux clients</h4>
+                    <hr>
+                    <ul>
+	        			<li class="fragment">
+	        				<span class="bold">Confidentialité :</span> anonymisation vs confidentialité complète.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">Contraintes :</span> temps, simplicité d'utilisation.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">APIs & vol de données :</span> France > Europe > USA.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">Effet "wow" :</span> inestimable.
+	        			</li>
+        			</ul>
+				    <aside class="notes">
+				    	USA aucune loi fédérale de protection des données : spécifiques à certains secteurs seulement (assurance santé) ou étatiques.<br>
+					    Confidentialité: pas forcément de données utilisateurs mais les phrases elles-mêmes sont confidentielles.<br>
+					    Temps : jamais pénalisé à la fac ou en recherche si le système met du temps à produire un résultat.<br>
+					    Vol de données : patriot act, NSA & CIA espionnent massivement les entreprises françaises et européennes, pas du complotisme. (e.g. OpenAI: pas utilisable)<br>
+					</aside>
+				</section>
+            	<section>
+					<h4>Python en entreprise ?</h4>
+					<hr>
+					<ul>
+						<li class="fragment"><span class="bold">Communauté :</span> communauté pro et de recherche.</li>
+						<li class="fragment"><span class="bold">Écosystème :</span> SpaCy, Gensim, Transformers, SKLearn...</li>
+						<li class="fragment"><span class="bold">Intégration :</span> BDD, HTTP, AMQP.</li>
+						<li class="fragment"><span class="bold">Déploiement :</span> préfabs sur AWS, Gcloud, Azure.</li>
+						<li class="fragment"><span class="bold">ML :</span> Torch, Tensorflow.</li>
+						<li class="fragment"><span class="bold">Soutien GAFAM :</span> librairies & wrappers API.</li>
+						<li class="fragment"><span class="bold">Rapidité :</span> prototypage, démonstrations, mise en service.</li>
+					</ul>
+				    <aside class="notes">
+				    	1er projet ATAL fait en Java...<br>
+					    Anecdote: anxieux à l'idée d'abandonner python pour m'adapter aux technos choisies par l'entreprise.<br>
+					    Tâches: aussi pas de tâches de haut niveau, e.g. détection des actes de dialogue.<br>
+					    Ressources: doit niveler par le bas.<br>
+					</aside>
+            	</section>
+				<section>
+					<h4>Conception d'un système</h4>
+					<hr>
+					<ul>
+						<li><span class="bold">Projet universitaire :</span> pipeline cohérente pour faire ressortir et évaluer l'élément innovant.</li>
+						<li><span class="bold">Projet d'industrie :</span> patchwork affreux.</li>
+					</ul>
+				    <aside class="notes">
+				    	Uni: optimiser l'élément salient<br>
+				    	Industrie : optimiser l'output à tout prix<br>
+					    bouillie infame melant machine learning, système expert, patrons linguistiques et heuristiques correctives.<br>
+					    (plusieurs modèles en succession ou intervenant ponctuellement)<br>
+					    anecdote: en thèse article rejeté parce que "patchwork", en boite félicité<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: 1ere itération</h4>
+                    <hr>
+                    <img src="img/b4win_archi_1.png" width="75%">
+				    <aside class="notes">
+					    Advanced Message Queuing Protocol<br>
+					    Compétition pour le CPU<br>
+					    Compétition pour la mémoire<br>
+					    Pas de GPU<br>
+					    Plus il y a de services plus il y a de redondance de code<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: 2e itération</h4>
+                    <hr>
+                    <img src="img/b4win_archi_2.png" width="75%">
+				    <aside class="notes">
+					    Le GPU n'était pas toujours utilisé, et coûte des sous même quand inactif.<br>
+					    Compétition pour le GPU, pas scalable.<br>
+					    Si l'instance tombe en erreur, tout tombe en erreur.<br>
+					    Process compliqué de mise à jour de B4NLP quand on veut des versions différentes pour différents services<br>
+					    Pannes inexpliquées.<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: système actuel</h4>
+                    <hr>
+                    <img src="img/b4win_archi.png" width="75%">
+				    <aside class="notes">
+					    Tout sur Azure.<br>
+					    Scalable en CPU, GPU, mémoire...<br>
+					    Espace disque commun, pratique pour partager des fichiers entre services (eg. trainer)<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Organisation des containers TAL</h4>
+                    <hr>
+                    <img src="img/container_architecture.png" width="75%">
+				    <aside class="notes">
+					    b4nlp a deux dockerfile: gpu et cpu<br>
+					    chaque service a une image construite à partir d'une image b4nlp parente<br>
+					    chaque service est en double: un exposé aux utilisateurs, l'autre pour le staging<br>
+					</aside>
+				</section>
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Questions / Réponses</h1>
+				    <aside class="notes">
+				    	Demander ce qu'ils comptent faire, s'ils ont déjà des pistes.<br>
+					    Parler des anciens de la 1ere promo.<br>
+					</aside>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
