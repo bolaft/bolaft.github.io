@@ -1,917 +1,421 @@
 <!doctype html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<head>
-    <meta charset="utf-8">
+    	<title>XMS1IE043 - Applications industrielles sur les données - 8 janvier 2024</title>
 
-    <title>M4105C - Technologies pour la production de logiciels</title>
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+	    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	    <link rel="stylesheet" href="css/custom.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+    		.reveal section {
+			    display: inline-block;
+			    font-size: 0.6em;
+			    line-height: 1.2em;
+			    vertical-align: top;
+		  	}
 
-    <meta name="author" content="Soufian Salim">
+		  	.bold {
+		  		color: #e97e46;
+		  		font-weight: bold;
+		  	}
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		  	p {
+		  		text-align: left;
+		  	}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/default.css" id="theme">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
-
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
-    <!-- <link rel="stylesheet" href="css/print/pdf.css"> -->
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-    document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
-    </script>
-
-    <!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
-
-    <style type="text/css">
-        .best {
-            background-color: rgba(0, 255, 55, 0.3);
-        }
-        .good {
-            background-color: rgba(145, 252, 5, 0.3);
-        }
-        .bad {
-            background-color: rgba(255, 153, 0, 0.3);
-        }
-        .worst {
-            background-color: rgba(252, 0, 0, 0.3);
-        }
-
-        .reveal .slide-number {
-            font-size: 36px;
-            bottom: 40px;
-            right: 120px;
-        }
-
-        li {
-            font-size: 90% !important;
-        }
-
-        li > ul > li {
-            font-size: 80% !important;
-        }
-
-        .cite {
-            color: #C5DDFF !important;
-        }
-
-        .rotate {
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-            -o-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-
-            /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
-            -webkit-transform-origin: 50% 50%;
-            -moz-transform-origin: 50% 50%;
-            -ms-transform-origin: 50% 50%;
-            -o-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-
-            /* Should be unset in IE9+ I think. */
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="reveal">
-
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section>
-                <section data-background="rgba(12,25,77,.4)">
-                    <h2>M4105C - Technologies pour la production de logiciels</h2>
-                    <strong style="font-size: 150%"><a href="http://nsal.im/iut/techno">nsal.im/iut/techno</a></strong>
-                </section>
-
-                <section>
-                    <h2>Objectifs du TD :</h2>
+		  	li {
+		  		margin-bottom: 7px;
+		  	}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <img src="img/logo_univ_nantes.png" width="20%">
+                    <h2>M1 ATAL - M1 DS - M1 VICO</h2>
+                    <h4>XMS1IE043 - Applications industrielles sur les données</h4>
+                    <div>8 janvier 2024
                     <hr>
-                    <p>Développer une application en Python consommant des données "open data" et exposant des services REST les utilisant.</p>
-                    <br>
-                    <p>L'objectif final, c'est d'obtenir une interface web (HTML/JS) qui permette de rechercher via des formulaires des équipements, des salles et des installations sportives.</p>
-                    <br>
-                    <p>L'application web obtient les données d'un serveur exposant des services REST. La base de données du serveur est alimentée par l'open data des Pays de la Loire.</p>
-                </section>
-
-                <section>
-                    <p>Vous devez développer :</p>
-                    <hr>
-                    <ul>
-                        <li>Le module du serveur qui importe les données en base</li>
-                        <li>Le module du serveur qui expose les services REST</li>
-                        <li>Un module d'administration pour modifier ou supprimer les donnnées (optionnel)</li>
-                        <li>L'application web qui permet de faire les recherches</li>
-                    </ul>
-                </section>
-
-                <section data-background="rgba(255,255,255,.75)">
-                    <img src="img/architecture.png">
-                </section>
-
-                <section>
-                    <h2>Plan du TD :</h2>
+                    <div>Soufian SALIM</div>
+                    <div>Bee4win</div>
+                    <div><a href="soufian.salim@bee4win.com">soufian.salim@bee4win.com</a></div>
+				    <aside class="notes">
+					    promo ATAL 2014<br>
+					    thèse au LS2N, qui s'appelait encore LINA au début<br>
+					    toute petite structure (4 act, 8 max)<br>
+					    mais gros clients: Orange, SNCF, EDF, TotalEnergies...<br>
+					    seule personne bossant sur le NLP<br>
+					</aside>
+				</section>
+				<section data-notes="something important">
+					<h4>Sommaire</h4>
                     <hr>
                     <ol>
-                        <li>Prise de contact avec Python</li>
-                        <li>Accès à une base de données en Python</li>
-                        <li>Accès à des données externes : fichiers et de services Web</li>
-                        <li>Client-serveur : création d'un serveur</li>
-                        <li>Exposition de services Web</li>
-                        <li>Utilisation des données géographiques (optionnel)</li>
-                        <li>Développement d'une interface complète</li>
+                    	<li><p><span class="bold">Présentation rapide</span></p>
+                    		<ul>
+                    			<li>Domaine d'activité : avant-vente</li>
+                    			<li>Outils Bee4win qui emploient le TAL</li>
+                    		</ul>
+                    	</li>
+                    	<li class="fragment"><p><span class="bold">Démo des services TAL développés</span></p>
+                    		<ul>
+								<li>Classification sémantique d'exigences</li>
+								<li>Extraction d'exigences dans un document structuré</li>
+								<li>Contrôle de la qualité des exigences</li>
+								<li>...</li>
+								<li>Pour chaque : <span class="bold">Démo + QA + pipeline</span></li>
+                    		</ul>
+                    	</li>
+                    	<li class="fragment"><p><span class="bold">Retours d'expériences du TAL/ML/DS en entreprise</p></span>
+							<ul>
+								<li>Université vs services en production</li>
+								<li>Architectures pour services TAL</li>
+								<li>Considérations générales</li>
+                    		</ul>
+                    	</li>
                     </ol>
-                </section>
-            </section>
-
-            <section>
-                <section data-background="rgba(255,122,0,.6)">
-                    <h2>TD1 (1/2) : prise de contact avec Python</h2>
-                </section>
-                <section>
-                    <h2>Avant de commencer</h2>
-                    <ul>
-                        <li>Python 3
-                    <pre><code data-trim contenteditable>
-which python
-                    </code></pre></li>
-                        <li>Éditeur ou IDE adapté (de préférence avec syntax highlighting)</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Syntaxe de base</h3>
-                    <pre><code data-trim contenteditable>
-x = 1
-
-if x == 1:
-    # this is a comment
-    print("x is 1.")
-elif x == 2:
-    print("x is 2.")
-else:
-    print("No idea.")
-                    </code></pre>
-                    <small>Indentation, assignement, condition, commentaire, <code>print()</code></small>
-                </section>
-                <section>
-                    <h2>Exécution</h2>
-                    <pre><code data-trim contenteditable>
-python
-                    </code></pre>
-
-                    ou
-
-                    <pre><code data-trim contenteditable>
-python3
-                    </code></pre>
-                    <small>lancement de l'interprêteur</small>
-                    <pre><code data-trim contenteditable>
-python3 my_script.py
-                    </code></pre>
-                    <small>execution d'un script (direct)</small>
-                    <pre><code data-trim contenteditable>
-#!/usr/bin/env python3
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-./my_script.py
-                    </code></pre>
-                    <small>execution d'un script (<em>hashbang</em>)</small>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-x = 15
-if x = 10:
-    % a comment...
-    print(x vaut 10)
-elseif x = 15
-    print(x vaut 15)
-                    </code></pre>
-                    <small>"Réparer" et exécuter le code suivant</small>
-                </section>
-
-                <section>
-                    <h2>Types et variables</h2>
-                    <pre><code data-trim contenteditable>
-one = 1
-two = 2
-three = one + two
-float = 1.0
-
-hello = "hello"
-world = "world"
-hello_world = hello + " " + world
-
-not_true = False
-is_true = True
-null_value = None
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-if True or False:
-    print(1)
-if not True == False:
-    print(2)
-if not None:
-    print(3)
-if not not "test":
-    print(4)
-if "test" and False:
-    print(5)
-if False or not "":
-    print(6)
-if False is None:
-    print(7)
-if False == (False == (not (None == False))):
-    print(8)
-                    </code></pre>
-                    <small>Tester ces comparaisons. Quels chiffres s'affichent ? Pourquoi ?</small>
-                </section>
-
-                <section>
-                    <h2>Listes et boucles</h2>
-                    <pre><code data-trim contenteditable>
-l = [5, 6]
-
-l.append(1)
-l.append(2)
-l.append(3)
-
-l[2] # 1
-l[-1] # 3
-l[0:2] # [5, 6]
-
-l = [9] + l # [9, 5, 6, 1, 2, 3]
-
-for x in l:
-    print(x)
-
-range(1, 5) # [1, 2, 3, 4]
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-l = ["abc", ["a", 1, True], "XYZ", 10]
-l = l[2:4] + [3]
-m = [3]
-
-for x in l:
-    if x not in m:
-        m.append(x)
-    else:
-        m = m + m
-                    </code></pre>
-                    <small>Tester. Que contient "m" ? Pourquoi ?</small>
-                </section>
-
-                <section>
-                    <h2>Fonctions et générateurs</h2>
-                    <pre><code data-trim contenteditable>
-def compute(a, b, double=False):
-    x = a + b
-    if double:
-        x = x * 2
-    return x
-
-compute(2, 3) # 5
-compute(7, 2, double=True) # 18
-
-def generate_doubles(l):
-    for x in l:
-        yield x * 2
-
-for d in generate_doubles([1, 5, 3]):
-    print(d) # 2, 10, 6
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-def print_sentences():
-    numbers = generate_numbers(3)
-
-    for n in numbers:
-        print(build_sentence(n))
-
-print_sentences()
-# Ceci est la phrase n°1
-# Ceci est la phrase n°2
-# Ceci est la phrase n°3
-                    </code></pre>
-                    <small>Coder <code>generate_numbers()</code> et <code>build_sentence()</code></small>
-                </section>
-
-                <section>
-                    <h2>Opérations sur les chaînes</h2>
-                    <pre><code data-trim contenteditable>
-name = "Brigitte"
-age = 45
-
-len(name) # 8
-
-print(name + " a " + str(age) + " ans") # "Brigitte a 45 ans"
-
-print("Elle s'appelle {0} et elle a {1} ans".format(name, age))
-
-name[:4].upper() # "BRI"
-
-name.index("gitte") # 3
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-urls = [
-    "www.monsite.fr",
-    "www.ooojah.com",
-    "www.blablatop.org",
-    "www.jeujeubla.ca"
-]
-
-parse_tlds(urls) # ["FR", "COM", "ORG", "CA"]
-                    </code></pre>
-                    <small>Coder <code>parse_tlds()</code></small>
-                </section>
-
-                <section>
-                    <h2>Dictionnaires</h2>
-                    <pre><code data-trim contenteditable>
-phone_book = {}
-phone_book["Aristote"] = "0668425814"
-phone_book["Momo"] = "0685472598"
-phone_book["Gertrude"] = "0665475123"
-
-if "Momo" in phone_book:
-    print(phone_book["Momo"])
-
-definitions = {
-    "cigale": "insecte bruyant",
-    "lapin": "mammifère terrestre",
-    "bidule": "truc"
-}
-
-for word, definition in definitions.items():
-    print("La définition de '{0}' est '{1}'".format(word, definition))
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-words = [
-    "tortue", "building", "manger", "ordinateur", "vacances", "portable", "mayo"
-]
-                    </code></pre>
-                    <small>Coder un programme qui construise un dictionnaire associant chaque mot (clef) à sa longueur (valeur)</small>
-                </section>
-
-                <section>
-                    <h2>Modules</h2>
-                    <pre><code data-trim contenteditable>
-import os
-
-os.listdir(".")
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-from os import listdir
-
-listdir(".")
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-from os import listdir as ld
-
-ld(".")
-                    </code></pre>
-                    <small>Imports</small>
-                    <pre><code data-trim contenteditable>
-my_folder/
-    __init__.py
-    my_other_module.py
-__init__.py
-my_script.py
-my_module.py
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-import my_module
-import my_folder.my_other_module
-                    </code></pre>
-                    <small>Modules "maison"</small>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-from tld_parser import parse_tlds
-
-urls = [
-    "www.monsite.fr",
-    "www.ooojah.com",
-    "www.blablatop.org",
-    "www.jeujeubla.ca"
-]
-
-parse_tlds(urls) # ["FR", "COM", "ORG", "CA"]
-                    </code></pre>
-                    <small>Créer un module "tld_parser" contenant la fonction codée précédemment, et l'importer dans un script</small>
-                </section>
-
-                <section>
-                    <h2>Classes</h2>
-                    <pre><code data-trim contenteditable>
-class Customer:
-    new = True
-
-    def __init__(self, name)
-        self.name = name
-
-    def introduction(self):
-        print("Bonjour, je m'appelle {0} !".format(self.name))
-
-c = Customer("Toto")
-c.new # True
-c.new = False
-c.new # False
-c.introduction() # "Bonjour, je m'appelle Toto !"
-c.test = c.name + "ababa"
-c.test # "Totoababa"
-                    </code></pre>
-                </section>
-
-                <section data-background="rgba(50,200,90,.4)">
-                    <h2>Exercice :</h2>
-                    <pre><code data-trim contenteditable>
-from time import sleep
-from random import randint
-
-class Boxer:
-    def __init__(self, name, health, strength, speed, dodge):
-        pass
-
-    def hit(self, opponent):
-        pass
-
-
-def fight(boxer1, boxer2):
-        while True:
-            sleep(1)
-            break
-
-                    </code></pre>
-                    <small>Coder hit() et fight() sachant que :
-                        <br>
-                    <ul>
-                    <li>À chaque seconde, la probabilité qu'un boxeur donne un coup est égale à son SPEED</li></ul>
-                    <li>Les chances de toucher sont de 100% moins le DODGE de l'adversaire</li>
-                    <li>Un coup qui touche fait perdre STRENGTH points de HEALTH à l'adversaire</li>
-                    <li>Quand un boxeur n'a plus de HEALTH, il est KO et son adversaire gagne</li></ul>
-                </small>
-                </section>
-            </section>
-            <section>
-                <section data-background="rgba(255,122,0,.6)">
-                    <h2>TD1 (2/2) : structure du code</h2>
-                </section>
-                <section>
-                    <h3>Versionnement (Git &amp; Github)</h3>
-                    <ul>
-                        <li>
-                            Github (http://github.com)
-                            <ol>
-                                <li>Créer un compte</li>
-                                <li>Créer un dépôt, suivre les instructions</li>
-                            </ol>
-                        </li>
-                        <li>
-                            Git
-                            <ul>
-                                <li>clone, pull, add, commit, push</li>
-                                <li>.gitignore (données, .pyc...)</li>
-                            </ul>
-                        </li>
-                        <li>Commits: fréquents, logiques et compréhensibles</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Python 3</h3>
-                    <pre><code data-trim contenteditable style="max-height: none;">
-python3
-                    </code></pre>
-                    <ul>
-                        <li>Tous les exemples vus sont compatibles Python 3</li>
-                        <li>Unicode par défaut</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Documentation du code</h3>
-                    <pre><code data-trim contenteditable style="max-height: none;">
-"""
-Number manipulator for Python 3
-"""
-
-def three():
-    """
-    Returns the number 3
-    """
-
-    return 3 # this returns the number 3
-                    </code></pre>
-                    <pre><code data-trim contenteditable>
-pydoc ./three.py
-                    </code></pre>
-                </section>
-                <section>
-                    <h3>Tests unitaires (doctest)</h3>
-                    <pre><code data-trim contenteditable>
-"""
-Number manipulator for Python 3
-
->>> three()
-3
-"""
-
-def three():
-    """
-    Returns the number 3
-
-    >>> three()
-    3
-    """
-
-    return 3
-                    </code></pre>
-                    <small>three.py</small>
-                    <pre><code data-trim contenteditable>
-python3 -m doctest three.py
-                    </code></pre>
-                </section>
-                <section>
-                    <h3>Tests unitaires (unittest)</h3>
-                    <pre><code data-trim contenteditable>
-import unittest
-from three import three
-
-class TestThree(unittest.TestCase):
-    self.assertTrue(three() == 3)
-
-if __name__ == "__main__":
-    unittest.main()
-                    </code></pre>
-                    <small>unit_test.py</small>
-                    <pre><code data-trim contenteditable>
-python3 unit_test.py
-                    </code></pre>
-                </section>
-                <section>
-                    <h3>Style</h3>
-                    <ul>
-                        <li>
-                            <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>
-                            <ul>
-                                <li>Espaces entre les opérateurs</li>
-                                <li>Classes et fonctions de premier niveau séprarés par deux lignes vides</li>
-                                <li>Longueur de ligne maximale</li>
-                                <li>Variables et fonctions en <em>lower_case</em></li>
-                                <li>Classes en <em>CamelCase</em></li>
-                                <li>...</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Nommage des variables, fonctions et classes
-                            <ul>
-                                <li>Explicite</li>
-                                <li>Cohérent</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <small></small>
-                </section>
-                <section>
-                    <h3>Arguments et options</h3>
-                    <pre><code data-trim contenteditable style="max-height: none;">
-from optparse import OptionParser
-
-
-def do_actual_stuff(args, opts):
-    print("The input file is {0}".format(args[0]))
-    if opts.quick:
-        print("Fast!")
-
-
-def parse_args():
-    op = OptionParser(usage="usage: %prog [opts] input_file")
-
-    op.add_option("-q", "--quick",
-        dest="quick",
-        default=False,
-        action="store_true",
-        help="if true, makes things go faster")
-
-    return op.parse_args()
-
-
-if __name__ == "__main__":
-    options, arguments = parse_args()
-
-    do_actual_stuff(arguments, options)
-                    </code></pre>
-                </section>
-                <section>
-                    <h3>Divers</h3>
-                    <ul>
-                        <li>Langue : <strong>anglais</strong></li>
-                        <li>README.md</li>
-                        <li>Orienté objet</li>
-                        <li>Code <strong>propre</strong></li>
-                        <li>L'évaluation insistera sur la <strong>forme</strong></li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <section data-background="rgba(255,122,0,.6)">
-                    <h2>TD2 : données</h2>
-                </section>
-                <section>
-                    <h3>Lire et importer les CSV ou JSON</h3>
+				</section>
+				<section>
+					<h4>Domaine d'activité de Bee4win</h4>
                     <hr>
-                    <ol>
-                        <li>Télécharger les fichiers de données :
-                            <ul>
-                                <li><a href="http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-fiches-installations">Installations</a></li>
-                                <li><a href="http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-fiches-equipements">Équipements</a></li>
-                                <li><a href="http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-activites-des-fiches-equ">Activités</a></li>
-                            </ul></li>
-                        <li>Lire les données et les convertir en objets
-                            <ul>
-                                <li>Utiliser le module "csv" ou "json"</li>
-                            </ul></li>
-                        <li>Créer une BDD et y stocker les données
-                            <ul>
-                                <li>De préférence PostgreSQL</li>
-                                <li>Dépôt Github utile : <a href="https://github.com/sebprunier/installations-sportives-pdl">https://github.com/sebprunier/installations-sportives-pdl</a></li>
-                            </ul></li>
-                    </ol>
-                </section>
-		<section>
-			<pre><code contenteditable data-trim style="max-height: none;">
-import sqlite3
-
-# ouvre la connexion à la base de données
-
-conn = sqlite3.connect("test.db")
-c = conn.cursor()
-
-# créé la table
-
-c.execute("DROP TABLE IF EXISTS test_table")
-c.execute("CREATE TABLE t_table (code integer PRIMARY KEY, label text)")
-
-conn.commit()
-
-# insert une entrée
-
-insert_query = "INSERT INTO t_table(code, label) VALUES (?, ?)"
-c.execute(insert_query, (activity_code, activity_label))
-
-conn.commit()
-
-# SELECT sur la table
-
-c.execute("SELECT code, label FROM t_table")
-
-for row in c:
-    print(row)
-
-conn.close()  # ferme la connexion à la base de données
-			</code></pre>
-		</section>
-            </section>
-            <section>
-                <section data-background="rgba(255,122,0,.6)">
-                    <h2>TD3 : serveur web</h2>
-                </section>
-                <section>
-                    <h3>Développer un serveur bottle.py</h3>
+                    <p>Services, conseils et solutions logicielles dans le domaine de <span class="bold">l'avant-vente</span> et de la <span class="bold">réponse aux appels d'offre</span>.</p>
+                    <ul>
+                    	<li class="fragment"><span class="bold">Appel d'offres:</span> <span>moyen pour les acheteurs publics ou les entreprises privées d'obtenir des offres de différents fournisseurs.</span></li>
+                    	<li class="fragment"><span class="bold">Avant-vente:</span> <span>tout le processus qui mène une entreprise à conclure une réponse à un appel d'offres.</li>
+                    </ul>
+                    <div class="fragment">
+                    <p>Les étapes sont :</p>
+	                    <ol>
+	                        <li><span class="fragment">Prospection</span><span class="fragment"> ← plate-forme web <span class="bold">Qualify</span></span></li>
+	                        <li><span class="fragment">Qualification des leads</span><span class="fragment"> ← plate-forme web <span class="bold">Qualify</span></span></li>
+	                        <li><span class="fragment">Analyse des besoins</span><span class="fragment"> ← plugin Word <span class="bold">Comply</span></span></li>
+	                        <li><span class="fragment">Préparation de l'offre</span><span class="fragment"> ← plugin Word <span class="bold">Comply</span></span></li>
+	                        <li><span class="fragment">Présentation de l'offre / Négociation / Conclusion / Suivi</span></li>
+	                    </ol>
+                	</div>
+				    <aside class="notes">
+					    BOAMP et autres plateformes (montrer BOAMP)<br>
+					    Cahiers des charges: analyse des besoins, préparation de l'offre, présentation de l'offre<br>
+					    Extensible à la gestion documentaire et de la rédaction<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Plate-forme web <span class="bold">Qualify</span></h4>
                     <hr>
-                    <ol>
-                        <li>Développer un serveur web en Python
-                            <ul>
-                                <li>Documentation : <a href="http://bottlepy.org/docs/dev/index.html">http://bottlepy.org/docs/dev/index.html</a></li>
-                            </ul></li>
-                        <li>Développer des routes permettant l'accès au données
-                            <ul>
-                                <li>HTML</li>
-                                <li>JSON (optionnel)</li>
-                            </ul>
-                        </li>
-                        <li>Développer des interfaces
-                            <ul>
-                                <li>Templates : SimpleTemplate (built-in), mako, jinja2, cheetah</li>
-                                <li>HTML, CSS, JS (optionnel)</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
-                <section>
-                    <h3>Exemple de serveur :</h3>
-                    <pre><code contenteditable data-trim style="max-height: none;">
-from bottle import route, template, run
-
-
-@route('/hello/<name>')
-def index(name):
-    return template('<b>Hello {{var}}</b>!', var=name)
-
-run(host='localhost', port=8080)
-                    </code></pre>
+                    <img src="img/qualify.png" width="100%">
+				    <aside class="notes">
+					    Usine à gaz<br>
+					    Agglomère les avis de marchés, cahiers des charges, documentation<br>
+					    Sert aux grosses boites pour trouver des offres pertinentes et s'organiser<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Plugin Word <span class="bold">Comply</span></h4>
                     <hr>
-                    <ol>
-                        <li>Exécuter le script</li>
-                        <li>S'assurer que le port 8080 est disponible :<ul>
-                            <li><code>sudo service apache2 stop</code></li>
-                            <li><code>sudo service tomcat6 stop</code></li>
-                        </ul></li>
-                        <li>Réquêter le serveur : <ul>
-                            <li><a href="http://localhost:8080/hello/world">http://localhost:8080/hello/world</a></li>
-                            <li><code>curl -XGET http://localhost:8080/hello/world</code></li>
-                        </ul></li>
-                    </ol>
-                </section>
-                <section>
-                    <h3>Exemple de template :</h3>
-                    <pre><code contenteditable data-trim style="max-height: none;">
-%if name == 'World':
-    <h1>Hello {{name}}!</h1>
-    <p>This is a test.</p>
-%else:
-    <h1>Hello {{name.title()}}!</h1>
-    <p>How are you?</p>
-%end
-                    </code></pre>
-                    <small>template.tpl</small>
-                    <pre><code contenteditable data-trim style="max-height: none;">
-from bottle import route, template, run
+                    <img src="img/comply.png" width="100%">
+				    <aside class="notes">
+					    vieille image, trouvé sur internet (ubuntu oblige, pas de Word)<br>
+					    bandeau en haut avec optin et actions (pas sélectionné ici)<br>
+					    panneau d'organisation des exigences à droite<br>
+					    bouton "extraire automatiquement" etc<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Utilisation du TAL</h4>
+					<hr>
+					<ul>
+						<li>
+							<span class="bold">Qualify:</span>
+							<ul>
+								<li class="fragment">Classification des avis</li>
+								<li class="fragment">Résumé automatique</li>
+								<li class="fragment">Extraction de mots-clefs</li>
+								<li class="fragment">Mesures de similarité</li>
+							</ul>
+						</li>
+						<li>
+							<span class="bold">Comply:</span>
+							<ul>
+								<li class="fragment">Extraction et classification des exigences</li>
+								<li class="fragment">Identification des risques</li>
+								<li class="fragment">Identification des doublons, contradictions...</li>
+								<li class="fragment">Controle de la qualité</li>
+								<li class="fragment">Identification des normes et standards</li>
+								<li class="fragment">Identification des documents annexes</li>
+							</ul>
+						</li>
+					</ul>
+				    <aside class="notes">
+					    Classification des avis: aussi enrichir les métadonnées<br>
+					    Mots-clefs: beaucoup de mots non pertinents, pas de solution out-of-the-box<br>
+					</aside>
+				</section>
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Démo : classification des exigences</h1>
 
+				    <aside class="notes">
+					    Montrer un cahier des charges<br>
+					    Expliquer la tâche<br>
+						exécuter script demo_classify.py
+					</aside>
+				</section>
+				<section>
+					<h4>Prétraitements</h4>
+                    <hr>
+                    <img src="img/preprocess.png" width="125%">
+				</section>
+				<section>
+					<h4>BERT</h4>
+                    <hr>
+                    <img src="img/bert_1.png" width="85%">
 
-@route('/hello/<name>')
-def index(name):
-    return template('template', name=name)
+				    <aside class="notes">
+					    Noter que le MASK n'est pas à la fin<br>
+					</aside>
+				</section>
+				<section>
+					<h4>BERT + classifieur</h4>
+                    <hr>
+                    <img src="img/bert_2.png" width="85%">
+				</section>
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Démo : classification formelle</h1>
 
-run(host='localhost', port=8080)
-                    </code></pre>
-                    <small>server.py</small>
-                </section>
-                <section>
-                    <h3>Exemple de formulaire :</h3>
-                    <pre><code contenteditable data-trim style="max-height: none;">
-from bottle import get, post, request, run
+				    <aside class="notes">
+					    Montrer test_table.docx<br>
+						Détailler la logique et la notion de signets<br>
+						exécuter script demo_formal.py<br>
+						montrer les fichiers de sortie<br>
+						montrer les fichiers de patterns<br>
+						parler des crfs<br>
+						conseiller Wapiti du LIMSI
+					</aside>
+				</section>
+				<section>
+					<h4>Pipeline de classification formelle</h4>
+                    <hr>
+                    <img src="img/formal.png" width="100%">
+				</section>
 
+				<aside class="notes">
+					Mentionner les heuristiques
+					Pas d'étiquetage, pas d'embeddings...
+				</aside>
 
-@get('/login')
-def login():
-    return '''
-        <form action="/login" method="post">
-            Username: <input name="username" type="text">
-            Password: <input name="password" type="password">
-            <input value="Login" type="submit">
-        </form>
-    '''
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Démo : analyse de la qualité</h1>
 
+					<aside class="notes">
+						Expliquer la tâche<br>
+						Montrer document du CNES<br>
+						exécuter script demo_quality.py<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Analyse de la qualité</h4>
+					<hr>
+					<img src="img/quality.png" width="125%">
+				</section>
+				<section>
+					<h4>Arbre de dépendance</h4>
+					<hr>
+					<img src="img/dep_tree.svg" width="100%">
+				</section>
+		
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Démo : alignement de phrases</h1>
 
-@post('/login')
-def do_login():
-    username = request.forms.get('username')
-    password = request.forms.get('password')
+					<aside class="notes">
+						Expliquer la tâche<br>
+						Montrer document de Chevenier et fichier json<br>
+						exécuter script demo_alignment.py<br>
+					</aside>
+				</section>
+		
+				<section>
+					<h4>Alignement</h4>
+					<hr>
+					<img src="img/alignment.png" width="125%">
+				</section>
+		
+				<section>
+					<section data-background="rgba(255,122,0,.6)">
+						<h1>Démo : LLM</h1>
+					</section>
 
-    if username == "admin" and password == "123":
-        return "<p>Your login information was correct.</p>"
-    else:
-        return "<p>Login failed.</p>"
+					<aside class="notes">
+						scripts ET serveur<br>
+					</aside>
+				</section>
+		
+				<section>
+					<section data-background="rgba(255,122,0,.6)">
+						<h1>Démo : Q&A</h1>
+					</section>
+				</section>
+		
+				<section>
+					<h4>QA</h4>
+					<hr>
+					<img src="img/qa.png" width="125%">
+				</section>
 
+				<section>
+					<h4>Retour d'expérience : université vs entreprise</h4>
+                    <hr>
+            		<ul>
+            			<li class="fragment">
+            				<span class="bold">Mesures de succès :</span> métriques objectives vs sentiment et utilité.
+            			</li>
+            			<li class="fragment">
+            				<span class="bold">Corpus et données :</span> corpus de recherche et d'apprentissage relativement "propres".</li>
+            			<li class="fragment">
+            				<span class="bold">Tâches atypiques :</span> pas que classification thématique, analyse du sentiment.
+            			</li>
+            			<li class="fragment">
+            				<span class="bold">Ressources linguistiques :</span> service constant selon la langue, le sous-domaine, le format.
+            			</li>
+            		</ul>
+				    <aside class="notes">
+					    Corpus: sont utilisés pour développer les outils qui sont testés dessus.<br>
+					    Tâches: aussi pas de tâches de haut niveau, e.g. détection des actes de dialogue.<br>
+					    Ressources: doit niveler par le bas.<br>
+					</aside>
+            	</section>
+            	<section>
+					<h4>Retour d'expérience : considérations par rapport aux clients</h4>
+                    <hr>
+                    <ul>
+	        			<li class="fragment">
+	        				<span class="bold">Confidentialité :</span> anonymisation vs confidentialité complète.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">Contraintes :</span> temps, simplicité d'utilisation.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">APIs & vol de données :</span> France > Europe > USA.
+	        			</li>
+	        			<li class="fragment">
+	        				<span class="bold">Effet "wow" :</span> inestimable.
+	        			</li>
+        			</ul>
+				    <aside class="notes">
+				    	USA aucune loi fédérale de protection des données : spécifiques à certains secteurs seulement (assurance santé) ou étatiques.<br>
+					    Confidentialité: pas forcément de données utilisateurs mais les phrases elles-mêmes sont confidentielles.<br>
+					    Temps : jamais pénalisé à la fac ou en recherche si le système met du temps à produire un résultat.<br>
+					    Vol de données : patriot act, NSA & CIA espionnent massivement les entreprises françaises et européennes, pas du complotisme. (e.g. OpenAI: pas utilisable)<br>
+					</aside>
+				</section>
+            	<section>
+					<h4>Python en entreprise ?</h4>
+					<hr>
+					<ul>
+						<li class="fragment"><span class="bold">Communauté :</span> communauté pro et de recherche.</li>
+						<li class="fragment"><span class="bold">Écosystème :</span> SpaCy, Gensim, Transformers, SKLearn...</li>
+						<li class="fragment"><span class="bold">Intégration :</span> BDD, HTTP, AMQP.</li>
+						<li class="fragment"><span class="bold">Déploiement :</span> préfabs sur AWS, Gcloud, Azure.</li>
+						<li class="fragment"><span class="bold">ML :</span> Torch, Tensorflow.</li>
+						<li class="fragment"><span class="bold">Soutien GAFAM :</span> librairies & wrappers API.</li>
+						<li class="fragment"><span class="bold">Rapidité :</span> prototypage, démonstrations, mise en service.</li>
+					</ul>
+				    <aside class="notes">
+				    	1er projet ATAL fait en Java...<br>
+					    Anecdote: anxieux à l'idée d'abandonner python pour m'adapter aux technos choisies par l'entreprise.<br>
+					    Tâches: aussi pas de tâches de haut niveau, e.g. détection des actes de dialogue.<br>
+					    Ressources: doit niveler par le bas.<br>
+					</aside>
+            	</section>
+				<section>
+					<h4>Conception d'un système</h4>
+					<hr>
+					<ul>
+						<li><span class="bold">Projet universitaire :</span> pipeline cohérente pour faire ressortir et évaluer l'élément innovant.</li>
+						<li><span class="bold">Projet d'industrie :</span> patchwork affreux.</li>
+					</ul>
+				    <aside class="notes">
+				    	Uni: optimiser l'élément salient<br>
+				    	Industrie : optimiser l'output à tout prix<br>
+					    bouillie infame melant machine learning, système expert, patrons linguistiques et heuristiques correctives.<br>
+					    (plusieurs modèles en succession ou intervenant ponctuellement)<br>
+					    anecdote: en thèse article rejeté parce que "patchwork", en boite félicité<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: 1ere itération</h4>
+                    <hr>
+                    <img src="img/b4win_archi_1.png" width="75%">
+				    <aside class="notes">
+					    Advanced Message Queuing Protocol<br>
+					    Compétition pour le CPU<br>
+					    Compétition pour la mémoire<br>
+					    Pas de GPU<br>
+					    Plus il y a de services plus il y a de redondance de code<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: 2e itération</h4>
+                    <hr>
+                    <img src="img/b4win_archi_2.png" width="75%">
+				    <aside class="notes">
+					    Le GPU n'était pas toujours utilisé, et coûte des sous même quand inactif.<br>
+					    Compétition pour le GPU, pas scalable.<br>
+					    Si l'instance tombe en erreur, tout tombe en erreur.<br>
+					    Process compliqué de mise à jour de B4NLP quand on veut des versions différentes pour différents services<br>
+					    Pannes inexpliquées.<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Architecture de services TAL: système actuel</h4>
+                    <hr>
+                    <img src="img/b4win_archi.png" width="75%">
+				    <aside class="notes">
+					    Tout sur Azure.<br>
+					    Scalable en CPU, GPU, mémoire...<br>
+					    Espace disque commun, pratique pour partager des fichiers entre services (eg. trainer)<br>
+					</aside>
+				</section>
+				<section>
+					<h4>Organisation des containers TAL</h4>
+                    <hr>
+                    <img src="img/container_architecture.png" width="75%">
+				    <aside class="notes">
+					    b4nlp a deux dockerfile: gpu et cpu<br>
+					    chaque service a une image construite à partir d'une image b4nlp parente<br>
+					    chaque service est en double: un exposé aux utilisateurs, l'autre pour le staging<br>
+					</aside>
+				</section>
+				<section data-background="rgba(255,122,0,.6)">
+					<h1>Questions / Réponses</h1>
+				    <aside class="notes">
+				    	Demander ce qu'ils comptent faire, s'ils ont déjà des pistes.<br>
+					    Parler des anciens de la 1ere promo.<br>
+					</aside>
+				</section>
+			</div>
+		</div>
 
-run(host='localhost', port=8080)
-                    </code></pre>
-                </section>
-		<section>
-                    <h3>Servir des fichiers (CSS, JS, images) :</h3>
-		    <pre><code contenteditable data-trim style="max-height: none;">
-web/
-    css/
-    img/
-    js/
-    index.tpl
-server.py
-                    </code></pre>
-                    <small>hiérarchie des dossiers</small>
-                    <pre><code contenteditable data-trim style="max-height: none;">
-@route("/css/<filename>")
-def style(filename):
-    return static_file(filename, root='web/css/')
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
 
-@route("/img/<filename>")
-def img(filename):
-	return static_file(filename,root="web/img/")
-
-@route("/js/<filename>")
-def script(filename):
-    return static_file(filename, root='web/js/')
-                    </code></pre>
-                    <small>server.py</small>
-
-                    <pre><code contenteditable data-trim style="max-height: none;">
-<link rel="stylesheet" href="css/main.css" />
-                    </code></pre>
-                    <small>index.tpl</small>
-                </section>
-            </section>
-        </div>
-    </div>
-    <div class="share-reveal" style="display: block; position: absolute; bottom: 14px; left: 1%; z-index: 20; color: white;">
-        Soufian SALIM - M4105C - Technologies pour la production de logiciels - <a href="http://nsal.im/iut/techno">nsal.im/iut/techno</a>
-    </div>
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
-
-    <script>
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        slideNumber: true,
-
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-
-        math: {
-            mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
-            config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
-        },
-        // Parallax scrolling
-        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-        // parallaxBackgroundSize: '2100px 900px',
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [{
-            src: 'lib/js/classList.js',
-            condition: function() {
-                return !document.body.classList;
-            }
-        }, {
-            src: 'plugin/markdown/marked.js',
-            condition: function() {
-                return !!document.querySelector('[data-markdown]');
-            }
-        }, {
-            src: 'plugin/markdown/markdown.js',
-            condition: function() {
-                return !!document.querySelector('[data-markdown]');
-            }
-        }, {
-            src: 'plugin/highlight/highlight.js',
-            async: true,
-            callback: function() {
-                hljs.initHighlightingOnLoad();
-            }
-        }, {
-            src: 'plugin/zoom-js/zoom.js',
-            async: true,
-            condition: function() {
-                return !!document.body.classList;
-            }
-        }, {
-            src: 'plugin/notes/notes.js',
-            async: true,
-            condition: function() {
-                return !!document.body.classList;
-            }
-        }, {
-            src: 'plugin/math/math.js',
-            async: true
-        }]
-    });
-    </script>
-
-</body>
-
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
 </html>
